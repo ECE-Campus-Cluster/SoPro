@@ -1,0 +1,69 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fswiss\fcharset0 Helvetica;\f2\fmodern\fcharset0 CourierNewPS-BoldMT;
+\f3\fmodern\fcharset0 CourierNewPS-ItalicMT;\f4\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red0\green64\blue128;\red26\green26\blue26;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat8\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid102\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25100\viewh14760\viewkind0
+\pard\tx560\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\b\fs28 \cf0 \ul \ulc0 \
+\
+\
+\
+Comment installer rapidement SoPro sur votre Drupal :
+\b0\fs24 \ulnone \
+\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural
+\ls1\ilvl0\cf0 {\listtext	1.	}L'administrateur doit cr\'e9er une base de donn\'e9e nomm\'e9e sopro.\
+{\listtext	2.	}L'administrateur importe le fichier "sopro.sql.zip" dans sa base de donn\'e9e.\
+{\listtext	3.	}L'administrateur place le dossier sopro \'e0 la racine de son serveur afin de pouvoir charger l'ensemble du site d\'e9velopp\'e9.\
+{\listtext	4.	}L'administrateur veillera \'e0 modifier les informations de connexion situ\'e9e dans :
+\f1  
+\f2\b \cf2 /sopro/Controller/membresActions/cnx.php.
+\f1\b0 \cf0 \
+\ls1\ilvl0
+\f0 {\listtext	5.	}Si l'utilisateur d\'e9die un serveur unix il place le contenu du r\'e9pertoire sopro \'e0 la racine de celui-ci.\
+{\listtext	6.	}Afin de permettre \'e0 l'utilisateur d'int\'e9grer rapidement la section sopro \'e0 son site l'utilisateur veillera que le module permettant d'ins\'e9rer du PHP soit install\'e9.\
+{\listtext	7.	}Dans une nouvelle page il int\'e9grera le code suivant afin de faire fonctionner l'ensemble de l'outil :
+\f1 \
+\pard\pardeftab720
+
+\f0 \cf2 \
+\pard\pardeftab720\li720\fi40
+
+\f2\b \cf2 <?php global $user;\
+$uid = $user->uid;?>\
+<div \'a0id="soPro"><iframe width="100%" height="1000" src="{\field{\*\fldinst{HYPERLINK "http://10.0.1.18/?drupalID="}}{\fldrslt \ul http://localhost?drupalID=}}<?php echo $uid; ?>" frameborder="0" ></iframe></div>\
+<script src="{\field{\*\fldinst{HYPERLINK "http://10.0.1.18/Controller/fullScreen.js"}}{\fldrslt \ul http://localhost/Controller/fullScreen.js}}"></script>
+\f0 \cf3 \
+
+\f3\i\b0 \
+// localhost devant \'eatre bien sur remplac\'e9 par l'adresse IP ou bien le nom de domaine correspondant au serveur h\'e9bergeant la solution.
+\f0 \
+
+\i0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls2\ilvl0\cf3 {\listtext	8.	}Afin de lancer le serveur g\'e9rant les sockets, l'administrateur devra le lancer par le biais de la commande: 
+\f2\b \cf2 node serveurs.js
+\f0 \cf3  
+\b0 ("Node" devant \'eatre installer sur le serveur UNIX)\
+{\listtext	9.	}Enfin l'utilisateur veillera \'e0 modifier l'adresse IP de :\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440
+\ls2\ilvl1
+\f2\b \cf2 {\listtext	
+\f4\b0 \uc0\u8259 
+\f2\b 	}/sopro/Controller/Phases/pad-phase1.js\
+{\listtext	
+\f4\b0 \uc0\u8259 
+\f2\b 	}/sopro/View/Site/invite.php\
+{\listtext	
+\f4\b0 \uc0\u8259 
+\f2\b 	}/sopro/View/Site/signup.php\
+\pard\tx220\tx720\tx1120\pardeftab720\li720\fi-720
+\ls2\ilvl0
+\f0 \cf0 {\listtext	10.	}
+\b0 SoPro est d\'e9sormais pr\'eat \'e0 \'eatre utilis\'e9.
+\f2\b \cf2 \
+}
