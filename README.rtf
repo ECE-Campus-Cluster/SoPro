@@ -1,69 +1,97 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
-{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fswiss\fcharset0 Helvetica;\f2\fmodern\fcharset0 CourierNewPS-BoldMT;
-\f3\fmodern\fcharset0 CourierNewPS-ItalicMT;\f4\fnil\fcharset0 Monaco;}
-{\colortbl;\red255\green255\blue255;\red0\green64\blue128;\red26\green26\blue26;}
-{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
-{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat8\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid102\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid2}}
-{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww25100\viewh14760\viewkind0
-\pard\tx560\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 ArialMT;\f2\fmodern\fcharset0 CourierNewPSMT;
+}
+{\colortbl;\red255\green255\blue255;\red255\green102\blue102;\red247\green102\blue116;\red0\green64\blue128;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25100\viewh15040\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
 
-\f0\b\fs28 \cf0 \ul \ulc0 \
+\f0\fs24 \cf0 /****INSTALLATION STANDALONE****/ \
+>> video tutorial : {\field{\*\fldinst{HYPERLINK "http://youtu.be/N3CyRstROrg"}}{\fldrslt http://youtu.be/N3CyRstROrg}}\
 \
+T\'e9l\'e9charger la derni\'e8re version soPro sur : 
+\b https://github.com/team-sopro/SoPro
+\b0 \
+extraire l'archive\
 \
+Configurer Apache de mani\'e8re \'e0 ce que soPro soit la racine de votre serveur\
 \
-Comment installer rapidement SoPro sur votre Drupal :
-\b0\fs24 \ulnone \
+Cr\'e9er dans votre mySql un base de donn\'e9es nomm\'e9e sopro\
+Importer sopro.sql.zip dans la base de donn\'e9es\
+Modifier les informations de connexion dans : 
+\b /sopro/Controller/membresActions/cnx.php
+\b0 \
 \
-\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\pardirnatural
-\ls1\ilvl0\cf0 {\listtext	1.	}L'administrateur doit cr\'e9er une base de donn\'e9e nomm\'e9e sopro.\
-{\listtext	2.	}L'administrateur importe le fichier "sopro.sql.zip" dans sa base de donn\'e9e.\
-{\listtext	3.	}L'administrateur place le dossier sopro \'e0 la racine de son serveur afin de pouvoir charger l'ensemble du site d\'e9velopp\'e9.\
-{\listtext	4.	}L'administrateur veillera \'e0 modifier les informations de connexion situ\'e9e dans :
-\f1  
-\f2\b \cf2 /sopro/Controller/membresActions/cnx.php.
-\f1\b0 \cf0 \
-\ls1\ilvl0
-\f0 {\listtext	5.	}Si l'utilisateur d\'e9die un serveur unix il place le contenu du r\'e9pertoire sopro \'e0 la racine de celui-ci.\
-{\listtext	6.	}Afin de permettre \'e0 l'utilisateur d'int\'e9grer rapidement la section sopro \'e0 son site l'utilisateur veillera que le module permettant d'ins\'e9rer du PHP soit install\'e9.\
-{\listtext	7.	}Dans une nouvelle page il int\'e9grera le code suivant afin de faire fonctionner l'ensemble de l'outil :
-\f1 \
-\pard\pardeftab720
-
-\f0 \cf2 \
-\pard\pardeftab720\li720\fi40
-
-\f2\b \cf2 <?php global $user;\
-$uid = $user->uid;?>\
-<div \'a0id="soPro"><iframe width="100%" height="1000" src="{\field{\*\fldinst{HYPERLINK "http://10.0.1.18/?drupalID="}}{\fldrslt \ul http://localhost?drupalID=}}<?php echo $uid; ?>" frameborder="0" ></iframe></div>\
-<script src="{\field{\*\fldinst{HYPERLINK "http://10.0.1.18/Controller/fullScreen.js"}}{\fldrslt \ul http://localhost/Controller/fullScreen.js}}"></script>
-\f0 \cf3 \
-
-\f3\i\b0 \
-// localhost devant \'eatre bien sur remplac\'e9 par l'adresse IP ou bien le nom de domaine correspondant au serveur h\'e9bergeant la solution.
-\f0 \
-
+Editer :\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi740\ql\qnatural\pardirnatural
+\cf0 ligne 108 du fichier 
+\b sopro/Controller/Phases/pad-phase1.js
+\b0 \
+remplacer par : \cf2 socket = io.connect('localhost',\{port:8080\});\cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 Editer :\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi740\ql\qnatural\pardirnatural
+\cf0 ligne 40 du fichier 
+\b sopro/View/Site/signup.php
+\b0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi20\ql\qnatural\pardirnatural
+\cf0 remplacer par : \cf2 <a   href="http://localhost/View/Site/activate.php?token='. $token .'&email=' .$to .'" >Activation du compte</a>';\cf0 \
+d\'e9-commenter la ligne 44\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 \
+Installer node.js sur : 
+\b http://nodejs.org/ 
+\i\b0 (version actuelle : 0.8.19)
 \i0 \
-\pard\tx220\tx720\pardeftab720\li720\fi-720
-\ls2\ilvl0\cf3 {\listtext	8.	}Afin de lancer le serveur g\'e9rant les sockets, l'administrateur devra le lancer par le biais de la commande: 
-\f2\b \cf2 node serveurs.js
-\f0 \cf3  
-\b0 ("Node" devant \'eatre installer sur le serveur UNIX)\
-{\listtext	9.	}Enfin l'utilisateur veillera \'e0 modifier l'adresse IP de :\
-\pard\tx940\tx1440\pardeftab720\li1440\fi-1440
-\ls2\ilvl1
-\f2\b \cf2 {\listtext	
-\f4\b0 \uc0\u8259 
-\f2\b 	}/sopro/Controller/Phases/pad-phase1.js\
-{\listtext	
-\f4\b0 \uc0\u8259 
-\f2\b 	}/sopro/View/Site/invite.php\
-{\listtext	
-\f4\b0 \uc0\u8259 
-\f2\b 	}/sopro/View/Site/signup.php\
-\pard\tx220\tx720\tx1120\pardeftab720\li720\fi-720
-\ls2\ilvl0
-\f0 \cf0 {\listtext	10.	}
-\b0 SoPro est d\'e9sormais pr\'eat \'e0 \'eatre utilis\'e9.
-\f2\b \cf2 \
+Lancer un terminal (console unix)\
+Lancer le serveur.js en lan\'e7ant la commande suivante : \cf2 node serveur.js\
+\
+\cf0 You can now browse to this url : \cf3 http://localhost\
+\
+\
+\cf0 /****END****/\
+\
+/****INSTALLATION DRUPAL****/\
+\
+T\'e9l\'e9charger la derni\'e8re version de drupal sur : 
+\b https://drupal.org/download 
+\b0 (version actuelle : 7.19)\
+extraire l'archive\
+\
+Suivre INSTALLATION STANDALONE (le contenu de SoPro doit ce situer \'e0 la racine avec les fichier de Drupal)\
+\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\ql\qnatural\pardirnatural
+\ls1\ilvl0
+\f1 \cf0 Activer le module
+\b  PHP Filter
+\b0  permettant d'ins\'e9rer du PHP (section module de Drupal)\
+\
+Activer le theme garland 7.19 en cliquant sur "set as default" (section appearance de Drupal)\
+\
+Dans une 
+\b Basic Page
+\b0  (section content de Drupal) on ins\'e8re le code suivant avec le champ PHP code selectionn\'e9 :
+\f0 \
+\pard\pardeftab720\ql\qnatural
+\cf4 \
+\pard\pardeftab720\li720\fi40\ql\qnatural
+\cf2 <?php global $user;\
+$uid = $user->uid;?>\
+<div id="soPro">\
+<iframe width="100%" height="1000" src="\ul http://localhost?drupalID=\ulnone <?php echo $uid; ?>" frameborder="0" ></iframe>\
+</div>\
+<script src="\ul http://localhost/Controller/fullScreen.js\ulnone "></script>\
+\
+\pard\pardeftab720\ql\qnatural
+\cf0 l'iframe est maintenant int\'e9gr\'e9e \'e0 Drupal
+\f2 \cf2 \
+\pard\pardeftab720\li720\fi40\ql\qnatural
+\cf2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0 \cf0 /****END****/\
 }
