@@ -37,7 +37,7 @@ if(!empty($_POST) && strlen($_POST['nom'])>1 && strlen($_POST['entreprise'])>1 &
 		$sujet = 'Activation de votre compte SoPro';
 		$body = '
 		Bonjour, veuillez activer votre compte en cliquant ici -> 
-		<a   href="http://10.0.1.18/View/Site/activate.php?token='. $token .'&email=' .$to .'" >Activation du compte</a>';
+		<a   href="http://localhost/View/Site/activate.php?token='. $token .'&email=' .$to .'" >Activation du compte</a>';
 		$entete = "MIME-Version: 1.0\r\n";
 		$entete .= "Content-type: text/html; charset=UTF-8\r\n";
 		$entete .= 'From: SoPro Brainstorming Tool' . '\r\n' . 'Reply-To: contact@sopro.com' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
